@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<main class="dashboard">
+
+<div class="container">
+
+<div class="dashboard-header">
+
+<div>
+
+<p class="muted">
+    Dashboard
+</p>
+
+<h1>
+    Welcome back,
+    {{ user.username }} 👋
+</h1>
+
+</div>
+
+<a
+    href="/profile/edit"
+    class="btn btn-primary"
+>
+    Edit Profile
+</a>
+
+</div>
+
+<div class="dashboard-grid">
+
+<div class="stat-card">
+
+<p class="muted">
+    Username
+</p>
+
+<h2>
+    {{ user.username }}
+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<p class="muted">
+    Email
+</p>
+
+<h2>
+    {{ user.email }}
+</h2>
+
+</div>
+
+<div class="stat-card">
+
+<p class="muted">
+    Account
+</p>
+
+<h2>
+    Active
+</h2>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="profile-card">
+
+<div class="profile-header">
+
+<div class="avatar">
+    {{ user.username[0]|upper }}
+</div>
+
+<div>
+
+<h2>
+    {{ user.full_name or user.username }}
+</h2>
+
+<p class="muted">
+    {{ user.email }}
+</p>
+
+</div>
+
+</div>
+
+<p>
+    {{ user.bio or "No bio added yet." }}
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+{% endblock %}

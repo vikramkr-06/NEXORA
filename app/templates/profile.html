@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+<div class="card">
+
+<div class="profile-header">
+
+<div class="avatar">
+    {{ user.username[0]|upper }}
+</div>
+
+<div>
+
+<h2>
+    {{ user.full_name or user.username }}
+</h2>
+
+<p class="muted">
+    {{ user.email }}
+</p>
+
+</div>
+
+</div>
+
+<p>
+<strong>Username:</strong>
+{{ user.username }}
+</p>
+
+<p>
+<strong>Email:</strong>
+{{ user.email }}
+</p>
+
+<p>
+<strong>Bio:</strong>
+{{ user.bio or "No bio added." }}
+</p>
+
+<hr>
+
+<div class="actions">
+
+<a
+    href="/profile/edit"
+    class="btn btn-primary"
+>
+    Edit Profile
+</a>
+
+<a
+    href="/profile/change-password"
+    class="btn btn-secondary"
+>
+    Change Password
+</a>
+
+<a
+    href="/account/delete"
+    class="btn btn-danger"
+>
+    Delete Account
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

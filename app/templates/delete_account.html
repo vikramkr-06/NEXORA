@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Account{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+<div class="card">
+
+<h1>Delete account</h1>
+
+<div class="alert alert-error">
+
+<strong>Warning:</strong>
+
+This action permanently deletes your
+account and cannot be undone.
+
+</div>
+
+<form
+    method="post"
+    onsubmit="
+        return confirm(
+            'Are you absolutely sure?'
+        )
+    "
+>
+
+<div class="form-group">
+
+<label>
+    Enter your password to confirm
+</label>
+
+<input
+    type="password"
+    name="password"
+    required
+>
+
+</div>
+
+{% if error %}
+
+<div class="alert alert-error">
+    {{ error }}
+</div>
+
+{% endif %}
+
+<button
+    class="btn btn-danger full"
+>
+    Permanently Delete Account
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

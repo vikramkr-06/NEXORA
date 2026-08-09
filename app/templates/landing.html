@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Modern Authentication
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="container">
+
+        <p class="muted">
+            FastAPI • PostgreSQL • Secure Authentication
+        </p>
+
+        <h1>
+            Simple.
+            <span>Secure.</span>
+            Powerful.
+        </h1>
+
+        <p>
+            A modern authentication platform built with
+            FastAPI and PostgreSQL. Create an account,
+            manage your profile and securely access your
+            dashboard.
+        </p>
+
+        <div class="actions">
+
+            <a
+                href="/register"
+                class="btn btn-primary"
+            >
+                Create Account
+            </a>
+
+            <a
+                href="/login"
+                class="btn btn-secondary"
+            >
+                Sign In
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
